@@ -3,6 +3,7 @@
 const addTaskBtn = document.getElementById('add-task');
 const input = document.querySelector('input');
 const taskList = document.querySelector('#task-list');
+const errorMsg = document.getElementById('errorMsg');
 
 let taskId = 0;
 let randomImgId = 1;
@@ -36,6 +37,10 @@ addTaskBtn.addEventListener('click', () => {
     addTask(taskWithImg);
     input.value = '';
     randomImgId++;
+    errorMsg.classList.add("hidden");
+  }
+  else {
+    errorMsg.classList.remove("hidden");
   }
 });
 
